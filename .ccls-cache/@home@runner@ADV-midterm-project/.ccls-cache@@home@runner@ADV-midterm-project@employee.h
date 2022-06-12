@@ -28,6 +28,7 @@ void setAge(int age){
   
 }
 int getAge(){ 
+  if(Age<=60) //not allow age exceed 100
   return Age;
 }
 
@@ -52,10 +53,10 @@ void set_all(string n, int a, int s){
 }
 
 void print_all(){
-    if(Age>=60) //not allow age exceed 60
- 		cout<<"name "<<Name<<" Salary: "<<Salary<<" age "<<Age<<" Too old!"<<endl;
+    if(Age>=60) //not allow age exceed 100
+ 		cout<<"print all name "<<Name<<" Salary: "<<Salary<<" age "<<Age<<" Too old!"<<endl;
     else
- 		cout<<"name "<<Name<<" Salary: "<<Salary<<" age "<<Age<<endl;
+ 		cout<<"print all name "<<Name<<" Salary: "<<Salary<<" age "<<Age<<endl;
 }
 
 

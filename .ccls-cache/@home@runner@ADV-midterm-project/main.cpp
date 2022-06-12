@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 #include"employee.h"
-
+#include"sorting.h"
+int x =0;
 int main(int argc, char **argv) {
   /*
 
@@ -25,17 +26,21 @@ after compile the file, paste this line to the console:
   employee *p= new employee[(argc-1)/3]; //use pointer p
   employee a[10];
   p=a;
-  int i,c;
-  string n;
-  float s;
+  int i,c,j;
   for(c=0,i=1;i<(argc-1);c++,i+=3){ //get input from argv
   p[c].set_all(argv[i],atoi(argv[i+1]),atoi(argv[i+2]));
     }
 
   for(c=0,i=1;i<(argc-1);c++,i+=3){ //print all output
+  cout<<c<<endl;  
   (p+c)->print_all();  
+    x=c;
     }
 
+  for(c=0;c<=x;c++){
+  cout<<p[c].getSalary()<<endl;  
+    
+  }
 
 
 
