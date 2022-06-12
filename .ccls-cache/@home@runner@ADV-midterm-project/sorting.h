@@ -1,6 +1,3 @@
-#ifndef sorting_h
-#define sorting_h
-
 #include <iostream>
 #include <iomanip>
 using namespace std;
@@ -68,4 +65,3 @@ void selectionSort(int a[], int n){
 }
 
 
-#endif

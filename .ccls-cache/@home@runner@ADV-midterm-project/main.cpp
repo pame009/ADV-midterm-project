@@ -1,5 +1,7 @@
 #include <iostream>
+#include <string.h>
 using namespace std;
+
 #include"employee.h"
 #include"sorting.h"
 int x =0;
@@ -7,7 +9,7 @@ int main(int argc, char **argv) {
   /*
 
 after compile the file, paste this line to the console:
-./main jack 1000 20 ming 2000 100 
+./main jack 1000 20 ming 2000 100 f 1 1
 
   */
   
@@ -26,7 +28,7 @@ after compile the file, paste this line to the console:
   employee *p= new employee[(argc-1)/3]; //use pointer p
   employee a[10];
   p=a;
-  int i,c,j;
+  int i,c,j,n;
   for(c=0,i=1;i<(argc-1);c++,i+=3){ //get input from argv
   p[c].set_all(argv[i],atoi(argv[i+1]),atoi(argv[i+2]));
     }
@@ -37,10 +39,27 @@ after compile the file, paste this line to the console:
     x=c;
     }
 
+  int arr[10];
   for(c=0;c<=x;c++){
-  cout<<p[c].getSalary()<<endl;  
-    
+  cout<<p[c].getSalary()<<endl; 
+  arr[c]=p[c].getSalary();
+    }
+  
+
+    x+=1;
+cout<<"Bubble Sort\n";
+    for (i = 0; i < x - 1; i++)
+        for (j = 0; j < x - i - 1; j++)
+            if (arr[j] > arr[j + 1]){ 
+                swap(arr[j], arr[j + 1]);
+                swap(a[j], a[j + 1]);
+            }
+  for(int i=0; i<x; ++i){
+    cout<<arr[i] << " ";
+      (p+i)->print_all();  
+
   }
+  cout<<endl;
 
 
 
