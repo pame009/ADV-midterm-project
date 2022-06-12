@@ -9,7 +9,7 @@ int main(int argc, char **argv) {
   /*
 
 after compile the file, paste this line to the console:
-./main jack 1000 20 ming 2000 100 f 1 1
+./main jack 1000 20 ming 2000 100 f 1 5 a 5 1
 
   */
   
@@ -40,14 +40,32 @@ after compile the file, paste this line to the console:
     }
 
   int arr[10];
-  for(c=0;c<=x;c++){
+  for(c=0;c<=x;c++){ //add salary array
   cout<<p[c].getSalary()<<endl; 
   arr[c]=p[c].getSalary();
     }
   
 
     x+=1;
-cout<<"Bubble Sort\n";
+cout<<"Bubble Sort\n"; //salary sort
+    for (i = 0; i < x - 1; i++)
+        for (j = 0; j < x - i - 1; j++)
+            if (arr[j] > arr[j + 1]){ 
+                swap(arr[j], arr[j + 1]);
+                swap(a[j], a[j + 1]);
+            }
+  for(int i=0; i<x; ++i){
+    cout<<arr[i] << " ";
+      (p+i)->print_all();  
+
+  }
+  cout<<endl;
+  
+  for(c=0;c<=x;c++){ //add age array
+  cout<<p[c].getAge()<<endl; 
+  arr[c]=p[c].getAge();
+    }
+cout<<"Bubble Sort\n"; //age sort
     for (i = 0; i < x - 1; i++)
         for (j = 0; j < x - i - 1; j++)
             if (arr[j] > arr[j + 1]){ 
