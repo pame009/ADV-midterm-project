@@ -2,6 +2,7 @@
 #define employee_h
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 class employee{
@@ -32,9 +33,9 @@ int getAge(){
 }
 
 void introduce(){
-  cout<<endl<<"name "<<Name<<endl;
-  cout<<"Salary "<<Salary<<endl;
-  cout<<"age "<<Age<<endl<<endl;
+  cout<<endl<<"Name "<<setw(10)<<Name<<endl;
+  cout<<"Salary "<<setw(10)<<Salary<<endl;
+  cout<<"Age "<<setw(10)<<Age<<endl<<endl;
   
 }
 
@@ -53,9 +54,9 @@ void set_all(string n, int a, int s){
 
 void print_all(){
     if(Age>=60) //not allow age exceed 60
- 		cout<<"name "<<Name<<" Salary: "<<Salary<<" age "<<Age<<" Too old!"<<endl;
+ 		cout<<"Name "<<setw(10)<<Name<<" Salary: "<<setw(10)<<Salary<<" Age "<<setw(10)<<Age<<" Too old!"<<endl;
     else
- 		cout<<"name "<<Name<<" Salary: "<<Salary<<" age "<<Age<<endl;
+ 		cout<<"Name "<<setw(10)<<Name<<" Salary: "<<setw(10)<<Salary<<" Age "<<setw(10)<<Age<<endl;
 }
 
 
