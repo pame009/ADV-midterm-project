@@ -72,19 +72,16 @@ cout<<"Age Sort\n"; //bubble age sort
   cout<<endl;
 
 
+  cout<<"Project by:"<<endl;
+  developer d1=developer("f1",99999,999,"coding");
+  developer d2=developer("f2",0,19,"video");
+  developer d3=developer("f3",0,19,"report");
+  developer d4=developer("f4",0,19,"report");
 
-  /*
-  employee e3 = employee();
-  e3.introduce();
-  employee e4 = employee("e4");
-  e4.introduce();
-  employee e5 = employee();
-  e5.introduce();
-  
-  developer d1=developer("f3","a3",30,"c++");
-  d1.intro();
-*/
-
+  d1.print_all();
+  d2.print_all();
+  d3.print_all();
+  d4.print_all();
   
   
 

@@ -54,9 +54,9 @@ void set_all(string n, int a, int s){
 
 void print_all(){
     if(Age>=60) //not allow age exceed 60
- 		cout<<"Name "<<setw(10)<<Name<<" Salary: "<<setw(10)<<Salary<<" Age "<<setw(10)<<Age<<" Too old!"<<endl;
+ 		cout<<"Name: "<<setw(10)<<Name<<" Salary: "<<setw(10)<<Salary<<" Age: "<<setw(10)<<Age<<" Too old!"<<endl;
     else
- 		cout<<"Name "<<setw(10)<<Name<<" Salary: "<<setw(10)<<Salary<<" Age "<<setw(10)<<Age<<endl;
+ 		cout<<"Name: "<<setw(10)<<Name<<" Salary: "<<setw(10)<<Salary<<" Age: "<<setw(10)<<Age<<endl;
 }
 
 
@@ -71,8 +71,9 @@ developer(string a, int b, int c, string extra)
   Extra = extra;
 }
 
-void intro(){
-  cout<<getName()<<" fix bug using "<<Extra<<endl;
+void print_all(){
+ 		cout<<"Name: "<<setw(5)<<getName()<<" Salary: "<<setw(5)<<getSalary()<<" Age: "<<setw(5)<<getAge()<<" Specialty: "<<Extra<<endl;
+
 }
 
 
