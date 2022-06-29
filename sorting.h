@@ -1,11 +1,8 @@
 #include <iostream>
 #include <iomanip>
-using namespace std;
+#include"employee.h"
 
-void bubbleSort(int, int);
-inline void swap(int &, int &);
-void insertSort(int, int);
-void selectionsort(int, int);
+using namespace std;
 
 inline void swap(int &a, int &b){
   int temp;
@@ -14,54 +11,45 @@ inline void swap(int &a, int &b){
   b = temp;
 }
 
-void bubbleSort(int a[], int n){
-cout<<"Bubble Sort\n";
-    int i, j;
-    for (i = 0; i < n - 1; i++)
-        for (j = 0; j < n - i - 1; j++)
-            if (a[j] > a[j + 1])
+void salarySort(employee a[10], int x){
+  int i,j,c;
+  int arr[10];
+
+  for(c=0;c<=x;c++){ //add salary array
+  //cout<<p[c].getSalary()<<endl; 
+  arr[c]=a[c].getSalary();
+    }
+  cout<<"\nSalary Sort\n"; //bubble salary sort
+    for (i = 0; i < x - 1; i++)
+        for (j = 0; j < x - i - 1; j++)
+            if (arr[j] > arr[j + 1]){ 
+                swap(arr[j], arr[j + 1]);
                 swap(a[j], a[j + 1]);
-  for(int i=0; i<n; ++i){
-    cout<< a[i] << " ";
+            }
+  for(int i=0; i<x; ++i){
+    //cout<<arr[i] << " ";
+      (a+i)->print_all();  
   }
-  cout<<endl;
 }
 
+void ageSort(employee a[10], int x){
+  int i,j,c;
+  int arr[10];
 
-void insertionSort(int a[], int n){
-  cout<<"Insertion Sort\n";
-  int i, key, j;
-  for (i = 1; i < n; i++){
-    key = a[i];
-    j = i - 1;
-    while (j >= 0 && a[j] > key){
-      a[j + 1] = a[j];
-      j = j - 1;
+  for(c=0;c<=x;c++){ //add age array
+  //cout<<p[c].getAge()<<endl; 
+  arr[c]=a[c].getAge();
     }
-    a[j + 1] = key;
+cout<<"\nAge Sort\n"; //bubble age sort
+    for (i = 0; i < x - 1; i++)
+        for (j = 0; j < x - i - 1; j++)
+            if (arr[j] > arr[j + 1]){ 
+                swap(arr[j], arr[j + 1]);
+                swap(a[j], a[j + 1]);
+            }
+  for(int i=0; i<x; ++i){
+    //cout<<arr[i] << " ";
+      (a+i)->print_all();  
   }
-  for(int i=0; i<n; ++i){
-    cout<< a[i] << " ";
-  }
-  cout<<endl;
 }
-
-
-void selectionSort(int a[], int n){
-  cout<<"Selection Sort\n";
-  int i, j, min_i;
-  for (i = 0; i < n-1; i++){
-    min_i = i;
-    for (j = i+1; j < n; j++){
-      if (a[j] < a[min_i])
-        min_i = j;
-    }
-    swap(a[min_i], a[i]);
-  }
-  for(int i=0; i<n; ++i){
-    cout<< a[i] << " ";
-  }
-  cout<<endl;
-}
-
 

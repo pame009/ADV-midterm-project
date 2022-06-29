@@ -7,6 +7,7 @@ using namespace std;
 
 class employee{
 private: //encapsulation
+
   string Name;
   int Salary;
   int Age;
@@ -62,7 +63,7 @@ void print_all(){
 
 };
 
-class developer:public employee{ //inheritance, public to access function in employee
+class developer:employee{ //inheritance
 public:
 string Extra;
 developer(string a, int b, int c, string extra)
@@ -73,15 +74,8 @@ developer(string a, int b, int c, string extra)
 
 void print_all(){
  		cout<<"Name: "<<setw(5)<<getName()<<" Salary: "<<setw(5)<<getSalary()<<" Age: "<<setw(5)<<getAge()<<" Specialty: "<<Extra<<endl;
-
 }
 
-
-
 };
-
-
-
-
 
 #endif
