@@ -34,9 +34,9 @@ int getAge(){
 }
 
 void introduce(){
-  cout<<endl<<"Name "<<setw(10)<<Name<<endl;
-  cout<<"Salary "<<setw(10)<<Salary<<endl;
-  cout<<"Age "<<setw(10)<<Age<<endl<<endl;
+  cout<<endl<<"Name "<<setw(8)<<Name<<endl;
+  cout<<"    Salary "<<setw(8)<<Salary<<endl;
+  cout<<"    Age "<<setw(8)<<Age<<endl<<endl;
   
 }
 
@@ -55,9 +55,9 @@ void set_all(string n, int a, int s){
 
 void print_all(){
     if(Age>=60) //not allow age exceed 60
- 		cout<<"Name: "<<setw(10)<<Name<<" Salary: "<<setw(10)<<Salary<<" Age: "<<setw(10)<<Age<<" Too old!"<<endl;
+ 		cout<<"Name: "<<setw(8)<<Name<<"    Salary: "<<setw(8)<<Salary<<"    Age: "<<setw(8)<<Age<<" Too old!"<<endl;
     else
- 		cout<<"Name: "<<setw(10)<<Name<<" Salary: "<<setw(10)<<Salary<<" Age: "<<setw(10)<<Age<<endl;
+ 		cout<<"Name: "<<setw(8)<<Name<<"    Salary: "<<setw(8)<<Salary<<"    Age: "<<setw(8)<<Age<<endl;
 }
 
 
@@ -77,7 +77,7 @@ void set(string a=" ",string extra=" "){
   
 }
 void print_all(){
- 		cout<<"Name: "<<setw(10)<<getName()<<"  ->   Specialty: "<<setw(8)<<Extra<<endl;
+ 		cout<<"Name: "<<setw(8)<<getName()<<"  ->   Specialty: "<<setw(8)<<Extra<<endl;
 }
 
 };

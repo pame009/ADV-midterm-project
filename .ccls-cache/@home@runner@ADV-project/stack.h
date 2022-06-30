@@ -13,7 +13,7 @@ public:
     Stack(NodePtr = NULL);
     ~Stack();
     int pop();
-    void push(int x,string n, string e);
+    void push(int x,string n);
 };
 
 Stack::Stack(NodePtr t){
@@ -26,8 +26,8 @@ Stack::Stack(NodePtr t){
 	 size=0;
    }
 }
-void Stack::push(int x,string n, string e){
-  NodePtr new_node=new NODE(x,n,e);
+void Stack::push(int x,string n){
+  NodePtr new_node=new NODE(x,n);
   if(new_node){
 	 	  new_node->set_next(top);
       top=new_node;

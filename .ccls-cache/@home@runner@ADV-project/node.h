@@ -10,7 +10,7 @@ string Name;
 string Extra;
 	NODE *nextPtr;
 public:
-	NODE(int,string,string);
+	NODE(int,string);
 	~NODE();
   int get_value();
 string get_name();
@@ -21,10 +21,9 @@ string get_extra();
 };
 typedef NODE* NodePtr;
 
-NODE::NODE(int x, string n, string e){
+NODE::NODE(int x, string n){
 	data=x;
   Name=n;
-  Extra=e;
 	nextPtr=NULL;
   //cout<<"push: "<<data<<endl;
 
@@ -35,10 +34,6 @@ int NODE::get_value(){
 string NODE::get_name(){
 	return Name;
 }
-string NODE::get_extra(){
-	return Extra;
-}
-
 
 NODE* NODE::get_next(){
 	return nextPtr;
