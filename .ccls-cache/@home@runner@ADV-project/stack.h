@@ -1,5 +1,8 @@
 #ifndef stack_h
 #define  stack_h
+#include <iostream>
+using namespace std;
+
 #include "node.h"
 
 class Stack{
@@ -10,7 +13,7 @@ public:
     Stack(NodePtr = NULL);
     ~Stack();
     int pop();
-    void push(int);
+    void push(int x,string n, string e);
 };
 
 Stack::Stack(NodePtr t){
@@ -23,12 +26,13 @@ Stack::Stack(NodePtr t){
 	 size=0;
    }
 }
-void Stack::push(int x){
-  NodePtr new_node=new NODE(x);
+void Stack::push(int x,string n, string e){
+  NodePtr new_node=new NODE(x,n,e);
   if(new_node){
 	 	  new_node->set_next(top);
       top=new_node;
      size++;
+    //cout<<x<<n<<e<<endl; //print all variable that push in
    }
  else cout<<"No memory left for new nodes"<<endl;
 		 // Left missing for exercises…
@@ -49,7 +53,7 @@ int Stack::pop(){
    return 0;
 	}
 Stack::~Stack(){
-   cout<<"Clearing all stacks"<<endl;
+   cout<<"\nClearing all stacks"<<endl;
   	int i;
   NodePtr t=top;
   for(i=0;i<size;i++){

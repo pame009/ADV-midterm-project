@@ -1,10 +1,12 @@
 #include <iostream>
 #include <string.h>
 #include <iomanip>
-using namespace std;
 
 #include"employee.h"
 #include"sorting.h"
+#include"node.h"
+#include"stack.h"
+using namespace std;
 int x =0;
 int main(int argc, char **argv) {
   /*
@@ -56,9 +58,13 @@ after compile the file, paste this line to the console:
     d[3].set("Jianen","report");
     d[4].set("Chonlasup","report");
 
-    for(i=1;i<dev;i++){
-    d[i].print_all();   
+    cout<<"(using stack)"<<endl;
+    Stack s;
+    for(i=1;i<dev;i++){ 
+      d[i].print_all();
+      s.push(i,d[i].getName(),d[i].Extra);   
     }
+    
     
 
   

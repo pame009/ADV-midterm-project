@@ -28,6 +28,7 @@ void salarySort(employee a[10], int x){
             }
   for(int i=0; i<x; ++i){
     //cout<<arr[i] << " ";
+    cout<<i+1<<" ";
       (a+i)->print_all();  
   }
 }
@@ -49,6 +50,7 @@ cout<<"\nAge Sort\n"; //bubble age sort
             }
   for(int i=0; i<x; ++i){
     //cout<<arr[i] << " ";
+    cout<<i+1<<" ";
       (a+i)->print_all();  
   }
 }
