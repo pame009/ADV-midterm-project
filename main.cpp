@@ -47,16 +47,14 @@ after compile the file, paste this line to the console:
 */
 
     
-
-  
     //outro
     cout<<"\n\nProject by:"<<endl;
     int dev=5;
     developer d[dev];
-    d[1].set("pongpom","coding");
-    d[2].set("rapeepat","video");
-    d[3].set("jianen","report");
-    d[4].set("jj","report");
+    d[1].set("Pongpom","coding");
+    d[2].set("Rapeepat","video");
+    d[3].set("Jianen","report");
+    d[4].set("Chonlasup","report");
 
     for(i=1;i<dev;i++){
     d[i].print_all();   

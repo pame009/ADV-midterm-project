@@ -77,7 +77,7 @@ void set(string a=" ",string extra=" "){
   
 }
 void print_all(){
- 		cout<<"Name: "<<setw(15)<<getName()<<" Specialty: "<<setw(8)<<Extra<<endl;
+ 		cout<<"Name: "<<setw(10)<<getName()<<"  ->   Specialty: "<<setw(8)<<Extra<<endl;
 }
 
 };
