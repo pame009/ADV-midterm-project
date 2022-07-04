@@ -6,13 +6,14 @@
 #include"sorting.h"
 #include"node.h"
 #include"stack.h"
+#include"queue.h"
 using namespace std;
 int x =0;
 int main(int argc, char **argv) {
   /*
 
 after compile the file, paste this line to the console:
-./main jack 1000 18 jame 2000 22 jim 500 20
+./main jack 1000 17 jame 2000 61 jim 500 20
 
 link to github:
 https://github.com/pame009/ADV-midterm-project
@@ -32,26 +33,45 @@ https://github.com/pame009/ADV-midterm-project
       x=c;
       }
     x+=1;
+      cout<<x<<endl;
     
     salarySort(a,x);
     ageSort(a,x);
 
     int choose; //for queue function
     cout<<"\n\nIt is lunch time and only employee can enter the cafeteria\n";  
+    
+    cout<<"(0 = dequeue)\n";
+    cout<<"(99 = end queue)\n";
     cout<<"Choose who will enter the queue first:\n";
-    cout<<"(0 = end queue):\n";
-    /*
-    string arr[10];
-    for(c=0;c<x;c++){ //add name queue array
-      cout<<(c+1)<<". "<<p[c].getName()<<endl; 
-      arr[c]=a[c].getName();
+    
+    Queue q;
+    i=0;
+    int size=0;
+    //size check with if 
+    do {
+      cin>>choose;
+      if(size>=x){
+        break;
+      }
+      if(choose==0){
+        q.dequeue();        
+      }
+      else{
+        q.enqueue(i,a[choose-1].getName()); 
+        size++;
+      }
+      //cout<<choose<<endl;
+      i++;
     }
-    
-    cin>>choose;
-    cout<<choose<<endl;
-*/
+    while(choose!=99);
 
-    
+      /*
+./main jack 1000 17 jame 2000 61 jim 500 20
+  */
+
+
+    /*
     //outro
     cout<<"\n\nProject by:"<<endl;
     int dev=5;
@@ -63,11 +83,11 @@ https://github.com/pame009/ADV-midterm-project
 
     cout<<"(using stack)"<<endl;
     Stack s;
-    for(i=1;i<dev;i++){ 
+    for(i=1;i<dev;i++){ //push stack loop FILO
       d[i].print_all();
-      s.push(i,d[i].getName());   
+      s.push(i,d[i].getName());   // auto pop(destruct) LIFO at the end loop
     }
-    
+    */
     
 
   

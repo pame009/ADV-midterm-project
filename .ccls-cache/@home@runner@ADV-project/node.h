@@ -7,14 +7,12 @@ using namespace std;
 class NODE{
 	 int data;
 string Name;
-string Extra;
 	NODE *nextPtr;
 public:
 	NODE(int,string);
 	~NODE();
   int get_value();
 string get_name();
-string get_extra();
 
 	void set_next(NODE *);
 	NODE* get_next();
