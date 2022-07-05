@@ -61,10 +61,14 @@ bool check(int arr[]){
     //Searches for duplicate element  
     for(int i = 0; i < 20; i++) { //size not exceed 20  
         for(int j = i + 1; j < 20; j++) {  
+          cout<<arr[j]<<" * ";
+          
           if(arr[i] == arr[j])  { 
-            if(arr[i]==0) break; //if find duplicate = 0, break then return true 
+            
+            if(arr[i]==8) break; //if find duplicate = 0, break then return true 
+              
               else{
-                //printf(" %d\n", arr[j]);  
+                //printf("false %d\n", arr[j]);  
                 return false;
                 }
             }

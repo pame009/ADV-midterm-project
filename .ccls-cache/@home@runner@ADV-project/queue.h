@@ -42,22 +42,21 @@ if(new_node){
 	 size++;
   
   cout<<"enqueue "<<n<<"  "<<size<<endl;
-  for(int i =1;i<=size;i++){
-    cout<<i<<" --- "<<size<<" --- "<<new_node->get_name()<<endl;
-  }
  }
 }
 int Queue::dequeue(){
   if(headPtr!=NULL){ //if not empty
      NodePtr t=headPtr;
-     int value= t->get_value();
+     int value = t->get_value();
     //1. move head away --> to the next one****** 
-    headPtr=headPtr->get_next(); //t->get_next();
+    headPtr = headPtr->get_next(); //t->get_next();
     //2. Only for the last node -->change tail
-    if(size==1) /* headPtr==NULL or  !headPtr*/
+    if(size==1) {/* headPtr==NULL or  !headPtr*/
         tailPtr=NULL;
+      }
      /* Add head and tail for me please */
       size--;    
+    cout<<size<<" size de "<<endl;
      delete t;
      return value;
   }

@@ -7,6 +7,8 @@
 #include"node.h"
 #include"stack.h"
 #include"queue.h"
+#include"ll.h"
+
 using namespace std;
 int x =0;
 int main(int argc, char **argv) {
@@ -47,27 +49,29 @@ https://github.com/pame009/ADV-midterm-project
     
     Queue q;
     int  arr[20];
-    for(i=0;i<20;i++){
-      arr[i]=0;
+    for(i=0;i<20;i++){ // fill array with 0
+      arr[i]=8;
     }
     i=0;
     do {
       cin>>choose; 
-      arr[i]=choose;
-      if(!check(arr)){// check duplicate cin
+      if(choose==99) break;
+      arr[i+1]=choose;
+      if(choose>x||choose<0){
+      cout<<"plese choose the correct number!"<<endl;
+      }
+      else if(!check(arr)||i>=x){// check duplicate cin
         cout<<a[choose-1].getName()<<" is already in queue"<<endl;
-        i--;
-        
       }
       else if(choose==0){// dequeue
-        q.dequeue();        
+        q.dequeue();   
         i--;
       }
       else{
         q.enqueue(i,a[choose-1].getName()); 
+        i++;
       }
-      cout<<i<<" i"<<endl;
-      i++;
+      cout<<i<<" i --"<<x<<" x "<<endl;
     }
     while(choose!=99); // end queue
 
