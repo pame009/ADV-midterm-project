@@ -34,10 +34,10 @@ https://github.com/pame009/ADV-midterm-project
       }
     x+=1;
       cout<<x<<endl;
-    
+    /*
     salarySort(a,x);
     ageSort(a,x);
-
+*/
     int choose; //for queue function
     cout<<"\n\nIt is lunch time and only employee can enter the cafeteria\n";  
     
@@ -46,25 +46,30 @@ https://github.com/pame009/ADV-midterm-project
     cout<<"Choose who will enter the queue first:\n";
     
     Queue q;
+    int  arr[20];
+    for(i=0;i<20;i++){
+      arr[i]=0;
+    }
     i=0;
-    int size=0;
-    //size check with if 
     do {
-      cin>>choose;
-      if(size>=x){
-        break;
+      cin>>choose; 
+      arr[i]=choose;
+      if(!check(arr)){// check duplicate cin
+        cout<<a[choose-1].getName()<<" is already in queue"<<endl;
+        i--;
+        
       }
-      if(choose==0){
+      else if(choose==0){// dequeue
         q.dequeue();        
+        i--;
       }
       else{
         q.enqueue(i,a[choose-1].getName()); 
-        size++;
       }
-      //cout<<choose<<endl;
+      cout<<i<<" i"<<endl;
       i++;
     }
-    while(choose!=99);
+    while(choose!=99); // end queue
 
       /*
 ./main jack 1000 17 jame 2000 61 jim 500 20

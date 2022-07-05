@@ -40,7 +40,11 @@ if(new_node){
   
   /*3. increase size*/
 	 size++;
-  cout<<"enquque "<<n<<endl;
+  
+  cout<<"enqueue "<<n<<"  "<<size<<endl;
+  for(int i =1;i<=size;i++){
+    cout<<i<<" --- "<<size<<" --- "<<new_node->get_name()<<endl;
+  }
  }
 }
 int Queue::dequeue(){
