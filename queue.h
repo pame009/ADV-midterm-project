@@ -9,6 +9,7 @@ class Queue {
 public:
    void enqueue(int x,string n);
    int dequeue();
+   bool check(int x);
    Queue();
    ~Queue(); // dequeue all
 };
@@ -27,22 +28,18 @@ Queue::~Queue(){
 
 
 void Queue::enqueue(int x,string n){
-  NodePtr new_node= new NODE(x,n);
-if(new_node){ 
-    /* Add head and tail for me please */
-
-  /* 1. connect & Change tail
-  2. (may be) change head  when the queue is empty
-*/
+  NodePtr new_node = new NODE(x,n);
+if(new_node!= NULL){ 
   if(!headPtr) headPtr=new_node; //if no node
    else tailPtr->set_next(new_node); //set next tail
    tailPtr=new_node; //always change
   
-  /*3. increase size*/
 	 size++;
   
-  cout<<"enqueue "<<n<<"  "<<size<<endl;
+  cout<<"\nenqueue "<<n<<" "<<size<<" size "<<x<<" x "<<headPtr->get_value()<<" "<<tailPtr->get_value()<<endl;
  }
+
+  
 }
 int Queue::dequeue(){
   if(headPtr!=NULL){ //if not empty
@@ -64,3 +61,16 @@ int Queue::dequeue(){
   return -1;
 }
 
+bool Queue::check(int choice){
+  int x=choice,i;
+    NodePtr t=headPtr;
+    for(i=0;i<size;i++){ //if not empty
+        cout<<x<<" x "<<t->get_value()<<"value check"<<endl;
+      if(x == t->get_value()){
+        cout<<x<<" x du checl"<<endl;
+        return true;
+        }
+      t=t->get_next();
+      }
+  return false;
+}

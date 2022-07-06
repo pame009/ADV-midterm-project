@@ -1,6 +1,6 @@
 #include <iostream>
 #include <iomanip>
-#include"employee.h"
+#include"employee.h" //for sort
 
 using namespace std;
 
@@ -54,28 +54,4 @@ cout<<"\nAge Sort\n"; //bubble age sort
       (a+i)->print_all();  
   }
 }
-
-bool check(int arr[]){     
-  //cout<<arr[1]<<" arr"<<endl;
-  //array fill with 0
-    //Searches for duplicate element  
-    for(int i = 0; i < 20; i++) { //size not exceed 20  
-        for(int j = i + 1; j < 20; j++) {  
-          cout<<arr[j]<<" * ";
-          
-          if(arr[i] == arr[j])  { 
-            
-            if(arr[i]==8) break; //if find duplicate = 0, break then return true 
-              
-              else{
-                //printf("false %d\n", arr[j]);  
-                return false;
-                }
-            }
-        }  
-    }
-  
-  return true;
-}
-
 

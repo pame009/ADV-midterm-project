@@ -7,6 +7,7 @@
 #include"node.h"
 #include"stack.h"
 #include"queue.h"
+
 using namespace std;
 int x =0;
 int main(int argc, char **argv) {
@@ -46,33 +47,26 @@ https://github.com/pame009/ADV-midterm-project
     cout<<"Choose who will enter the queue first:\n";
     
     Queue q;
-    int  arr[20];
-    for(i=0;i<20;i++){ // fill array with 0
-      arr[i]=8;
-    }
-    i=0;
-    do {
-      cin>>choose; 
-      if(choose==99) break;
-      arr[i+1]=choose;
-      if(choose>x||choose<0){
-      cout<<"plese choose the correct number!"<<endl;
-      }
-      else if(!check(arr)||i>=x){// check duplicate cin
-        cout<<a[choose-1].getName()<<" is already in queue"<<endl;
-      }
-      else if(choose==0){// dequeue
-        q.dequeue();   
-        i--;
-      }
-      else{
-        q.enqueue(i,a[choose-1].getName()); 
-        i++;
-      }
-      cout<<i<<" i --"<<x<<" x "<<endl;
-    }
-    while(choose!=99); // end queue
+    int choice=-1; // user's choice
+    cout<< "? ";
+    // loop while user does not choose 99
+    while (true) { 
+    cin>>choice;
+      cout<< choice<<" choice"<<endl<<endl;
+     if(choice==99) break;
+     if(choice==0){ //dequeue
+       q.dequeue();
+     } else if (choice > x){
+       cout<<"plese choose the correct number!"<<endl;
+       }
+       else if (q.check(choice)){
+         cout<<endl<<choice<<" is already in queue"<<endl;
+         }
+         else {
+           q.enqueue(choice,a[choice-1].getName());// queue int with name employee name
+           }
 
+    
       /*
 ./main jack 1000 17 jame 2000 61 jim 500 20
   */
@@ -97,6 +91,6 @@ https://github.com/pame009/ADV-midterm-project
     */
     
 
-  
+     }
   }
   }
