@@ -3,7 +3,7 @@
 using namespace std;
 #ifndef node_h
 #define  node_h
-
+//for queue
 class NODE{
 	 int data;
 string Name;
@@ -42,7 +42,7 @@ void NODE::set_next(NODE *t){
 }
 
 NODE::~NODE(){
-	 cout<<"deleting  " <<data<<"  "<<Name<<endl;
+	 cout<<"deleting  " <<data<<"  "<<Name<<endl<<endl;
 
 }
 

@@ -35,7 +35,6 @@ void Stack::push(int x,string n){
     //cout<<x<<n<<e<<endl; //print all variable that push in
    }
  else cout<<"No memory left for new nodes"<<endl;
-		 // Left missing for exercises…
 }
 int Stack::pop(){
  	   NodePtr t=top;
@@ -43,7 +42,6 @@ int Stack::pop(){
 	 if(t)	{
     top=top->get_next();
      value=t->get_value();
-	// Left missing for exercises
      delete t;
      size--;
      return value;
@@ -60,12 +58,7 @@ Stack::~Stack(){
       t=top;
       top=top->get_next();
       delete t;
-           	// Left missing for exercises
   }
-
-
 }
-
-
 
 #endif

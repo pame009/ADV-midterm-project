@@ -7,7 +7,7 @@ class Queue {
 	NodePtr headPtr,tailPtr;
 	int size;
 public:
-   void enqueue(int x,string n);
+   void enqueue(int x,string n); 
    int dequeue();
    bool check(int x);
    Queue();
@@ -26,8 +26,7 @@ Queue::~Queue(){
   for(i=0;i<size;i++) dequeue();
 }
 
-
-void Queue::enqueue(int x,string n){
+void Queue::enqueue(int x,string n){ //get intput with employee name
   NodePtr new_node = new NODE(x,n);
 if(new_node!= NULL){ 
   if(!headPtr) headPtr=new_node; //if no node
@@ -36,10 +35,9 @@ if(new_node!= NULL){
   
 	 size++;
   
-  cout<<"\nenqueue "<<n<<" "<<size<<" size "<<x<<" x "<<headPtr->get_value()<<" "<<tailPtr->get_value()<<endl;
+  cout<<"enqueue "<<n<<" \n"<<endl;
  }
 
-  
 }
 int Queue::dequeue(){
   if(headPtr!=NULL){ //if not empty
@@ -53,7 +51,7 @@ int Queue::dequeue(){
       }
      /* Add head and tail for me please */
       size--;    
-    cout<<size<<" size de "<<endl;
+    //cout<<size<<" size de "<<endl;
      delete t;
      return value;
   }
@@ -61,16 +59,16 @@ int Queue::dequeue(){
   return -1;
 }
 
-bool Queue::check(int choice){
+bool Queue::check(int choice){ //check dupicate input
   int x=choice,i;
     NodePtr t=headPtr;
-    for(i=0;i<size;i++){ //if not empty
-        cout<<x<<" x "<<t->get_value()<<"value check"<<endl;
+    for(i=0;i<size;i++){ //loop all queue
+        //cout<<x<<" x "<<t->get_value()<<"value check"<<endl;
       if(x == t->get_value()){
-        cout<<x<<" x du checl"<<endl;
-        return true;
+        //cout<<x<<" x du checl"<<endl;
+        return true; //heve duplicate
         }
       t=t->get_next();
       }
-  return false;
+  return false; //no duplicate
 }

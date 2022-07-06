@@ -33,46 +33,42 @@ https://github.com/pame009/ADV-midterm-project
       (p+c)->print_all();  
       x=c;
       }
-    x+=1;
-      cout<<x<<endl;
-    /*
+      x+=1;
+      //cout<<x<<endl;
+    
     salarySort(a,x);
     ageSort(a,x);
-*/
-    int choose; //for queue function
-    cout<<"\n\nIt is lunch time and only employee can enter the cafeteria\n";  
-    
+
+    cout<<"\n\nIt is lunch time and only employee can enter the cafeteria\n";      
     cout<<"(0 = dequeue)\n";
     cout<<"(99 = end queue)\n";
     cout<<"Choose who will enter the queue first:\n";
     
-    Queue q;
+    Queue q; //for queue function
     int choice=-1; // user's choice
-    cout<< "? ";
     // loop while user does not choose 99
     while (true) { 
+    cout<< "? ";
     cin>>choice;
-      cout<< choice<<" choice"<<endl<<endl;
-     if(choice==99) break;
+     if(choice==99){ //break loop
+       cout<<"\nend queue"<<endl;
+       while(q.dequeue()!=-1){ //dequeue all
+         q.dequeue();
+       }
+       break; 
+       }
      if(choice==0){ //dequeue
        q.dequeue();
-     } else if (choice > x){
+     } else if (choice > x){ // if input exceed size
        cout<<"plese choose the correct number!"<<endl;
        }
-       else if (q.check(choice)){
+       else if (q.check(choice)){ //check duplicate input function
          cout<<endl<<choice<<" is already in queue"<<endl;
          }
-         else {
-           q.enqueue(choice,a[choice-1].getName());// queue int with name employee name
+         else { // queue int with name employee name
+           q.enqueue(choice,a[choice-1].getName());
            }
-
-    
-      /*
-./main jack 1000 17 jame 2000 61 jim 500 20
-  */
-
-
-    /*
+      } //end while loop
     //outro
     cout<<"\n\nProject by:"<<endl;
     int dev=5;
@@ -87,10 +83,6 @@ https://github.com/pame009/ADV-midterm-project
     for(i=1;i<dev;i++){ //push stack loop FILO
       d[i].print_all();
       s.push(i,d[i].getName());   // auto pop(destruct) LIFO at the end loop
-    }
-    */
-    
-
      }
   }
   }

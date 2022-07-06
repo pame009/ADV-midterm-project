@@ -64,7 +64,7 @@ void print_all(){
 
 
 };
-
+//for outro
 class developer:public employee{ //inheritance
 public:
 string Extra;
