@@ -11,9 +11,9 @@ inline void swap(int &a, int &b){
   b = temp;
 }
 
-void salarySort(employee a[10], int x){
+void salarySort(employee a[20], int x){
   int i,j,c;
-  int arr[10];
+  int arr[20];
 
   for(c=0;c<=x;c++){ //add salary array
   //cout<<p[c].getSalary()<<endl; 
@@ -33,9 +33,9 @@ void salarySort(employee a[10], int x){
   }
 }
 
-void ageSort(employee a[10], int x){
+void ageSort(employee a[20], int x){
   int i,j,c;
-  int arr[10];
+  int arr[20];
 
   for(c=0;c<=x;c++){ //add age array
   //cout<<p[c].getAge()<<endl; 

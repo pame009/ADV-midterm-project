@@ -9,12 +9,12 @@
 #include"queue.h"
 
 using namespace std;
-int x =0;
+int x = 0; //global employee size
 int main(int argc, char **argv) {
   /*
 
 after compile the file, paste this line to the console:
-./main jack 1000 17 jame 2000 61 jim 500 20
+./main jack 1000 17 jame 2000 61 jim 500 20 John 5000 25
 
 link to github:
 https://github.com/pame009/ADV-midterm-project
@@ -23,7 +23,7 @@ https://github.com/pame009/ADV-midterm-project
   if(argc>1){ //make program not run without input argc/argv
     int i,c,j,n;
     employee *p= new employee[(argc-1)/3]; //use pointer p
-    employee a[10];
+    employee a[20];
     p=a;
     for(c=0,i=1;i<(argc-1);c++,i+=3){ //get input from argv
       p[c].set_all(argv[i],atoi(argv[i+1]),atoi(argv[i+2]));
@@ -35,7 +35,8 @@ https://github.com/pame009/ADV-midterm-project
       }
       x+=1;
       //cout<<x<<endl;
-    
+
+    //sorting.h function
     salarySort(a,x);
     ageSort(a,x);
 
@@ -63,13 +64,16 @@ https://github.com/pame009/ADV-midterm-project
        cout<<"plese choose the correct number!"<<endl;
        }
        else if (q.check(choice)){ //check duplicate input function
-         cout<<endl<<choice<<" is already in queue"<<endl;
+         cout<<endl<<a[choice-1].getName()<<" is already in queue"<<endl;
          }
          else { // queue int with name employee name
            q.enqueue(choice,a[choice-1].getName());
            }
+      q.printQueue(); //print current queue
       } //end while loop
     //outro
+
+    
     cout<<"\n\nProject by:"<<endl;
     int dev=5;
     developer d[dev];

@@ -10,6 +10,7 @@ public:
    void enqueue(int x,string n); 
    int dequeue();
    bool check(int x);
+   void printQueue();
    Queue();
    ~Queue(); // dequeue all
 };
@@ -71,4 +72,14 @@ bool Queue::check(int choice){ //check dupicate input
       t=t->get_next();
       }
   return false; //no duplicate
+}
+
+void Queue::printQueue(){ //print current queue
+  NodePtr t=headPtr;
+  int i;
+  for(i=0;i<size;i++){ //loop all queue
+    cout<<" -> "<<t->get_name();
+    t=t->get_next();
+    }
+  puts("\n");
 }
